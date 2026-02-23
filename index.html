@@ -17,8 +17,13 @@
     .spectrum-bars { display: flex; gap: 6px; height: 40px; margin-top: 20px; }
     .bar { width: 4px; background: white; border-radius: 2px; animation: bounce 1.2s infinite ease-in-out; }
     @keyframes bounce { 0%, 100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(2); opacity: 1; } }
-    .contact-mail { color: #ffffff; text-decoration: none; font-size: 1.2em; letter-spacing: 2px; transition: 0.3s; -webkit-user-select: auto; user-select: auto; }
-    .contact-mail:hover { color: #888; }
+    
+    /* Estilo del Botón de Contacto */
+    .contact-link { 
+        color: #ffffff; text-decoration: none; font-size: 1.5em; 
+        letter-spacing: 5px; transition: 0.3s; font-weight: bold;
+    }
+    .contact-link:hover { color: #888; letter-spacing: 7px; }
   </style>
 </head>
 <body oncontextmenu="return false;">
@@ -53,8 +58,7 @@
   </main>
 
   <footer style="margin-top: 100px; padding-bottom: 50px; color: #555; font-size: 0.9em; text-align: center;">
-      <p style="margin-bottom: 15px; letter-spacing: 2px;">CONTACTO</p>
-      <a href="mailto:mendozavoiceover@gmail.com" class="contact-mail">mendozavoiceover@gmail.com</a>
+      <a href="mailto:mendozavoiceover@gmail.com" class="contact-link">CONTACTO</a>
       <br><br><br>
       <span style="font-size: 0.8em; letter-spacing: 1px;">&copy; 2026 Jorge Mendoza - Todos los derechos reservados</span>
   </footer>
@@ -68,6 +72,7 @@
       setTimeout(() => splash.style.display = 'none', 800);
       audioBv.play().catch(e => console.log(e));
     });
+    // Bloqueo de teclas de inspección
     document.onkeydown = function(e) {
         if(e.keyCode == 123) return false;
         if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
